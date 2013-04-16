@@ -1,0 +1,62 @@
+extends layout
+
+block mainContent
+	.row-fluid
+		header
+			h1 Welcome to <em>quote.it</em><br>A quick and simple stock market ticker service.
+			p quotes are refreshed every 300 seconds - this example has been developed with Backbone.js, Underscore.js, NodeJS, Jade, CoffeeScript, JavaScript and Bootstrap - brought to you by Elie Labeca
+	.row-fluid
+		.span9.offset1#container
+
+	script#quote-list(type="text/template")
+		form.form-inline
+			label Add another symbol here [examples: SBUX, ORCL or TWX]
+			br
+			input#input-symbol.input-small(type="text", placeholder="Symbol to add")
+			button#btn-add.btn.btn-info(type="submit") Add
+			button#btn-delete.btn.btn-danger(type="button") Remove selected
+			button#btn-refresh.btn(type="button") Refresh
+
+		table.table.table-bordered
+			thead
+				tr
+					td Select
+					td Symbol
+					td Name
+					td Ask
+					td Bid
+					td Last trade
+					td Previous close
+				tbody#quotes
+
+		#quote-carousel.carousel.slide
+			#quote-carousel-inner.carousel-inner
+				a.carousel-control.left(href="#quote-carousel", data-slide="prev") &lsaquo;
+				a.carousel-control.right(href="#quote-carousel", data-slide="next") &rsaquo;
+
+
+	script#quote(type="text/template")
+		| <td><input class="select" type="checkbox" <%= selected %> /></td>
+		| <td><%= symbol %></td>
+		| <td><%= name %></td>
+		| <td><%= ask %></td>
+		| <td><%= bid %></td>
+		| <td><%= last_trade %></td>
+		| <td><%= previous_close %></td>
+
+	script#quote-carousel-item(type="text/template")
+		.container
+			.d.d1
+				| <h1><%= symbol %></h1>
+				| <h3><%= name %></h3>
+				| <h4>Last trade: <%= last_trade %><h4>
+			.d.d2
+				| <h2>Ask: <%= ask %></h2>
+				| <h2>Bid: <%= bid %></h2>
+				| <h4>Previous close: <%= previous_close %></h4>
+    
+		.carousel-caption
+			| <p><%= symbol %> - <%= name %></p>
+
+
+

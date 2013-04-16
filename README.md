@@ -1,0 +1,1 @@
+This is a simple example of a stock ticker SPA written using Backbone.js
