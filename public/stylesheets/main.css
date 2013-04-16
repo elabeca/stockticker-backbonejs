@@ -1,9 +1,10 @@
-header { background: #E8117F; padding: 50px; margin-bottom: 25px; color: #FFF; text-decoration:none; }
-header em { color: white;padding: 2px 12px 2px 8px;background: #222;text-transform: uppercase; }
-header p { color: yellow; }
-form input, form button { margin-right: 10px; }
-.carousel a { z-index: 999; }
+header { background:#E8117F;padding:50px;margin-bottom:25px;color:#FFF;text-decoration:none; }
+header a { color:#FFF; }
+header em { color:#FFF;padding:2px 12px 2px 8px;background:#222;text-transform: uppercase; }
+header p { color:yellow; }
+form input, form button { margin-right:10px; }
+.carousel a { z-index:999; }
 .carousel .item .container { min-width:400px;display:block;min-height:170px;padding:10px 20px 20px 80px;background-image:url('/images/1200x480.gif'); }
-.carousel .item .container h4 { color: #FFF; }
-.carousel .item .container .d { display:block; float:left; float:left; margin-left:30px; }
+.carousel .item .container h4 { color:#FFF; }
+.carousel .item .container .d { display:block;float:left;float:left;margin-left:30px; }
 .carousel .item .container .d.d1 { margin-left:0px; }
