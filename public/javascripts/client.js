@@ -32,7 +32,8 @@ $(document).ready(function() {
     		this.model.on('remove', this.remove, this);
     	},
     	events: {
-    		"change input.select": "toggleSelect"
+    		"change input.select": "toggleSelect",
+			"click a.remove": "removeStock"
     	},
     	render: function() {
     		this.$el.append(this.template(this.model.toJSON()));
@@ -43,6 +44,10 @@ $(document).ready(function() {
     	},
     	toggleSelect: function() {
     		this.model.toggleSelect();
+    	},
+    	removeStock: function() {
+			this.$el.remove();
+    		this.model.destroy();
     	}
     });
     

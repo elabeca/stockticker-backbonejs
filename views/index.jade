@@ -22,6 +22,7 @@ block mainContent
 		table.table.table-bordered
 			thead
 				tr
+					td Remove
 					td Select
 					td Symbol
 					td Name
@@ -38,6 +39,7 @@ block mainContent
 
 
 	script#quote(type="text/template")
+		| <td><a class="label label-important remove" href"#">X</a></td>
 		| <td><input class="select" type="checkbox" <%= selected %> /></td>
 		| <td><%= symbol %></td>
 		| <td><%= name %></td>

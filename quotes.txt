@@ -1,3 +1,5 @@
-"AAPL","Apple Inc.",390.25,389.91,390.53,392.05
-"MSFT","Microsoft Corpora",29.87,N/A,29.765,28.79
-"GOOG","Google Inc.",799.97,762.00,799.87,765.914
+"MSFT","Microsoft Corpora",N/A,N/A,29.765,29.765
+"APPL","APPELL PETE CORP",N/A,N/A,0.00,N/A
+"AAPL","Apple Inc.",N/A,N/A,390.53,390.53
+"ORCL","Oracle Corporatio",N/A,N/A,32.37,32.37
+"GOOG","Google Inc.",N/A,N/A,799.87,799.87
