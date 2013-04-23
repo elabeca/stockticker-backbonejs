@@ -1,12 +1,4 @@
 $(document).ready(function() {
-	//     var test = [
-	// {"id":0,"symbol":"AAPL","name":"Apple Inc.","ask":"429.70","bid":"428.88","last_trade":"429.80","previous_close":"434.33"},
-	// {"id":1,"symbol":"MSFT","name":"Microsoft Corpora","ask":"30.00","bid":"N/A","last_trade":"28.79","previous_close":"28.935"},
-	// {"id":2,"symbol":"GOOG","name":"Google Inc.","ask":"792.19","bid":"N/A","last_trade":"790.05","previous_close":"790.39"},
-	// {"id":3,"symbol":"SBUX","name":"Starbucks Corpora","ask":"59.18","bid":"59.10","last_trade":"59.09","previous_close":"58.575"},
-	// {"id":5,"symbol":"ORCL","name":"Oracle Corporatio","ask":"35.00","bid":"N/A","last_trade":"33.46","previous_close":"33.615"},
-	// {"id":6,"symbol":"TWX","name":"Time Warner Inc. ","ask":"N/A","bid":"N/A","last_trade":"59.46","previous_close":"59.66"}
-	// ];
     var defaultUrl = "/quotes.json?stocks=AAPL+MSFT+GOOG";
     
     var Stock = Backbone.Model.extend({
@@ -113,9 +105,12 @@ $(document).ready(function() {
     		e.preventDefault();
     		var input = this.$el.find('#input-symbol');
     		var symbol = input.val();
+			var isExisting = _.contains(this.collection.pluck('symbol'), symbol);
     		input.val('');
-    		this.collection.add(new Stock({ symbol: symbol }));
-    		this.refresh();
+			if (!isExisting) {
+	    		this.collection.add(new Stock({ symbol: symbol }));
+	    		this.refresh();
+			}
     	}
     });
     
